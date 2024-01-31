@@ -1,0 +1,200 @@
+/* 
+const messages = [
+  "Learn React ⚛️",
+  "Apply for jobs 💼",
+  "Invest your new income 🤑",
+];
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  color: #333;
+}
+
+.app {
+  display: flex;
+  margin: 3rem;
+  padding: 2rem;
+}
+
+.steps {
+  width: 600px;
+  background-color: #f7f7f7;
+  border-radius: 7px;
+  padding: 25px 100px;
+  margin: 100px auto;
+}
+
+.numbers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.numbers > div {
+  height: 40px;
+  aspect-ratio: 1;
+  background-color: #e7e7e7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.numbers .active {
+  background-color: #7950f2;
+  color: #fff;
+}
+
+.message {
+  text-align: center;
+  font-size: 20px;
+  margin: 40px 0;
+  font-weight: bold;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons button {
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.buttons button span {
+  font-size: 16px;
+  line-height: 1;
+}
+
+h3 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 40px;
+  color: inherit;
+}
+
+.close:hover {
+  color: #7950f2;
+}
+
+/******/
+
+.container {
+  width: 300px;
+  height: 60vh;
+  border: 1px solid #006cff;
+  border-radius: 10px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.loader1,
+.loader2,
+.loader3 {
+  border-radius: 50%;
+  animation: l1 4s infinite linear;
+  position: absolute;
+}
+
+.loader1 {
+  width: 290px;
+  aspect-ratio: 1;
+  background: #bad7e9;
+  animation: l1 4s infinite linear;
+  top: -20%;
+  left: 25%;
+}
+
+.loader2 {
+  width: 280px;
+  aspect-ratio: 1.2;
+  animation: l2 5s infinite linear;
+  background: #bb9cc0;
+  top: 25%;
+  left: -15%;
+}
+
+.loader3 {
+  width: 290px;
+  aspect-ratio: 0.9;
+  animation: l1 4s infinite linear;
+  background: #ffebd8;
+  top: 65%;
+  left: 25%;
+}
+
+@keyframes l1 {
+  12.5% {
+    border-radius: 37% 63% 70% 30% / 30% 62% 38% 70%;
+  }
+  25% {
+    border-radius: 50% 50% 70% 30% / 52% 62% 38% 48%;
+  }
+  37.5% {
+    border-radius: 33% 67% 18% 82% / 52% 75% 25% 48%;
+  }
+  50% {
+    border-radius: 73% 27% 18% 82% / 52% 32% 68% 48%;
+  }
+  62.5% {
+    border-radius: 73% 27% 74% 26% / 64% 32% 68% 36%;
+  }
+  75% {
+    border-radius: 84% 16% 15% 85% / 55% 79% 21% 45%;
+  }
+  87.5% {
+    border-radius: 12% 88% 69% 31% / 10% 66% 34% 90%;
+  }
+}
+
+@keyframes l2 {
+  12.5% {
+    border-radius: 37% 23% 70% 30% / 30% 23% 38% 70%;
+  }
+  25% {
+    border-radius: 50% 50% 70% 30% / 52% 62% 38% 48%;
+  }
+  37.5% {
+    border-radius: 33% 67% 18% 82% / 52% 75% 25% 48%;
+  }
+  50% {
+    border-radius: 73% 27% 18% 82% / 52% 32% 68% 48%;
+  }
+  62.5% {
+    border-radius: 73% 27% 74% 26% / 64% 32% 68% 36%;
+  }
+  75% {
+    border-radius: 84% 16% 15% 85% / 55% 79% 21% 45%;
+  }
+  87.5% {
+    border-radius: 12% 88% 69% 31% / 10% 66% 34% 90%;
+  }
+}
