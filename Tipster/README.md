@@ -1,4 +1,6 @@
-# React + Vite
+# Tipster
+
+![Alt text](public/bill.JPG)
 
 This is a simple React application that calculates the total amount to be paid, including a tip, based on the bill amount and the service quality selected by the user for both themselves and their friend. Let's break down the components and their functionality:
 
