@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useReducer } from "react";
 /*
 INSTRUCTIONS / CONSIDERATIONS:
 
-1. Let's implement a simple bank account! It's similar to the example that I used as an analogy to explain how useReducer works, but it's simplified (we're not using account numbers here)
+1. Let's implement a simple bank account! It's similar to the example 
+that I used as an analogy to explain how useReducer works, 
+but it's simplified (we're not using account numbers here)
 
-2. Use a reducer to model the following state transitions: openAccount, deposit, withdraw, requestLoan, payLoan, closeAccount. Use the `initialState` below to get started.
+2. Use a reducer to model the following state transitions: 
+openAccount, deposit, withdraw, requestLoan, payLoan, closeAccount. 
+Use the `initialState` below to get started.
 
 3. All operations (expect for opening account) can only be performed if isActive is true. If it's not, just return the original state object. You can check this right at the beginning of the reducer
 
@@ -23,7 +27,18 @@ const initialState = {
   isActive: false,
 };
 
+function reducer(state, action) {
+  switch (action.type) {
+    case "openacc":
+      return { ...state, balance: 500 };
+    default:
+      throw new Error("Unknown action");
+  }
+}
+
 export default function App() {
+  const [{ openAccount }, dispatch] = useReducer(reducer, initialState);
+
   return (
     <div className="App">
       <h1>useReducer Bank Account</h1>
@@ -31,7 +46,10 @@ export default function App() {
       <p>Loan: X</p>
 
       <p>
-        <button onClick={() => {}} disabled={false}>
+        <button
+          onClick={() => dispatch({ type: "openacc", payload: balance })}
+          disabled={false}
+        >
           Open account
         </button>
       </p>
