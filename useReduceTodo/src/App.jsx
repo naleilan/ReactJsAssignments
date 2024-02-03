@@ -66,6 +66,7 @@ export default function App() {
     <div className="app">
       <form onSubmit={handleSubmit}>
         <input
+          className="input"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
