@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import Todo from "./Todo";
 
 export const ACTIONS = {
@@ -31,13 +31,36 @@ function newTodo(name) {
 
 export default function App() {
   const [todos, dispatch] = useReducer(reducer, []);
-  const [name, setName] = useState("");
+  const [name, setName] = useState(() => {
+    // getting stored value
+    const saved = localStorage.getItem("name");
+    return saved ? JSON.parse(saved) : "";
+  });
+
+  useEffect(() => {
+    // storing input name if it's not empty
+    if (name !== "") {
+      localStorage.setItem("name", JSON.stringify(name));
+    }
+  }, [name]);
 
   function handleSubmit(e) {
     e.preventDefault();
     dispatch({ type: ACTIONS.TODO_ADD, payload: { name: name } });
     setName("");
   }
+
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   if (name !== "") {
+  //     dispatch({ type: ACTIONS.TODO_ADD, payload: { name: name } });
+  //     setName("");
+
+  //     // Update local storage after adding a new todo
+  //     const updatedTodos = [...todos, newTodo(name)];
+  //     localStorage.setItem("name", JSON.stringify(updatedTodos));
+  //   }
+  // }
 
   return (
     <div className="app">
@@ -46,6 +69,7 @@ export default function App() {
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          placeholder="Add Todo"
         />
       </form>
       {todos.map((todo) => {
