@@ -10,20 +10,18 @@ The initial state of the bank account includes the balance (initially set to 0),
 
 ### Actions:
 
-The available actions are defined in the ACTIONS object, which includes OPEN_ACC, DEPOSIT, WITHDRAW, REQUEST_LOAN, PAYlOAN, and CLOSE_ACC. These actions represent opening an account, depositing money, withdrawing money, requesting a loan, paying a loan, and closing the account, respectively.
+The available actions are defined in the ACTIONS object, which includes:
+OPEN_ACC,
+DEPOSIT,
+WITHDRAW,
+REQUEST_LOAN,
+PAYlOAN,
+CLOSE_ACC.
 
 ### Reducer Function:
 
-The reducer function takes the current state and an action as parameters and returns the new state based on the action type. It follows the rules specified in the comments:
-
 - If the account is not active (isActive is false) and the action is not to open an account, it returns the current state.
 - It then checks the action type and performs the corresponding state transitions based on the rules mentioned in the comments.
-
-### React Component (App):
-
-The App component uses the useReducer hook to manage the state. It renders buttons for various actions, and the onClick handlers dispatch actions to the reducer. Buttons are conditionally disabled based on the isActive status.
-
-The current state values (balance, loan) are displayed on the UI.
 
 ### Button Actions:
 
