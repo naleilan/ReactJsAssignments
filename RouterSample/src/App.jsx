@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./components/Home";
-import About from "./components/About";
-import Contact from "./components/Contact";
+import HomePage from "./pages/HomePage";
+import AboutMe from "./pages/AboutPage";
+import ContactUs from "./pages/ContactUs";
 
 export default function App() {
   return (
@@ -19,9 +19,9 @@ export default function App() {
           </li>
         </ul>
         <Routes>
-          <Route exact path="/" element={<Home />}></Route>
-          <Route exact path="/about" element={<About />}></Route>
-          <Route exact path="/contact" element={<Contact />}></Route>
+          <Route exact path="/" element={<HomePage />}></Route>
+          <Route exact path="/about" element={<AboutMe />}></Route>
+          <Route exact path="/contact" element={<ContactUs />}></Route>
         </Routes>
       </div>
     </Router>
